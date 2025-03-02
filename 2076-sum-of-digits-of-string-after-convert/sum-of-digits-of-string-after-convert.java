@@ -1,10 +1,16 @@
 class Solution {
     public int getLucky(String s, int k) {
         StringBuilder sb=new StringBuilder();
+        int sum1=0;
         for(char ch:s.toCharArray()){
-            sb.append(ch-96);
+            int num=ch-96;
+            while(num>0){
+                sum1+=(num%10);
+                num=num/10;
+            }
         }
-        while(k>0){
+        sb.append(sum1);
+        while(k>1){
             int sum=0;
             for(int i=0;i<sb.length();i++){
                 sum+=(sb.charAt(i)-'0');
