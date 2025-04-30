@@ -14,6 +14,8 @@ class GFG {
 
             ArrayList<Integer> ans = new Solution().nthRowOfPascalTriangle(n);
             printAns(ans);
+
+            System.out.println("~");
         }
     }
 
@@ -31,15 +33,16 @@ class GFG {
 // User function Template for Java
 
 class Solution {
+
     ArrayList<Integer> nthRowOfPascalTriangle(int n) {
-        ArrayList<Integer> list = new ArrayList<>();
-        int ele=1;
-        list.add(ele);
-        
+        ArrayList<Integer>list=new ArrayList<>();
+        int num=1;
+        list.add(num);
         for(int i=1;i<n;i++){
-            ele=ele*(n-i)/i;  // formula
-            list.add(ele);
+            num=num*(n-i)/i;
+            list.add(num);
         }
         return list;
+       
     }
 }
